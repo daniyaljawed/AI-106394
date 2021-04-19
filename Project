@@ -1,1 +1,18 @@
+Finding Accuracy Using KNN Classifier
+from sklearn import datasets
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
 
+digits = datasets.load_digits()
+X=digits.data
+y=digits.target
+X.shape
+X_train, X_test,y_train,y_test =train_test = train_test_split (X,y,test_size =0.10,random_state=99,stratify =y) //train_test_split function is using to spliting the data
+by passing the target feature and targeted values test size is set to be 10% and using random_state to reproducing the reslut
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_train,y_train) // using fit function of knn to fit the model on test and train data
+Y_predict = knn.predict(X_test) // Predict on test data and it will return 2 dimensional array of digits
+accuracy = knn.score(X_test,y_test)
+print('Accuracy :',accuracy) // and it will give the accuracu of 0.823
