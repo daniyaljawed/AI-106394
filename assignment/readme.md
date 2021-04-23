@@ -1,1 +1,1 @@
-
+First There was an error occured while running the code of naive bayes classifier "ValueError("Found input variables with inconsistent numbers of" ValueError: Found input variables with inconsistent numbers of samples: [1617, 1797]" continously working together and resolve this error
